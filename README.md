@@ -177,7 +177,7 @@ Our implementation is based on the [[DPC](https://github.com/TengdaHan/DPC)] fra
 
     - `seq_len=5` means 5 frames for each _step_ (concept used in DPC).
 
-    - `num_seq=2`and ` pred_step=1` so that at a certain time position _t_, we use 1 step before and 1 step after to assess the predictability at time _t_; thus the predictability at time $t$ is the feature difference between the average feature of 5 sampled frames before$t$and the average feature of 5 sampled frames after _t_.
+    - `num_seq=2`and ` pred_step=1` so that at a certain time position _t_, we use 1 step before and 1 step after to assess the predictability at time _t_; thus the predictability at time _t_ is the feature difference between the average feature of 5 sampled frames before _t_ and the average feature of 5 sampled frames after _t_.
 
     - we slide such model over time to obtain predictability at different temporal positions. More details can be found in `dataset_3d_infer_pred_error.py`. Note that `window_lists.pkl` stores the index of frames to be sampled for every window - since it takes a long time to compute (should be able to optimize in the future), we store its value and just load this pre-computed value in the future runs on the same dataset during experimental explorations.
 
