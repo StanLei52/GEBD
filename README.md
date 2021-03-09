@@ -2,7 +2,7 @@
 
 We release our data annotation & baseline codes for detecting generic event boundaries in video.
 
-Links: [[Arxiv](https://arxiv.org/abs/2101.10511)]  [[LOVEU Challenge](https://sites.google.com/view/loveucvpr21/challenge)]
+Links: [[Arxiv](https://arxiv.org/abs/2101.10511)]  [[LOVEU Challenge](https://sites.google.com/view/loveucvpr21/home)]
 
 Contributors: Mike Zheng Shou, Stan Lei, Deepti Ghadiyaram, Weiyao Wang, Matt Feiszli.
 
