@@ -173,7 +173,7 @@ Our implementation is based on the [[DPC](https://github.com/TengdaHan/DPC)] fra
 
   - Notes:
 
-    - `ds=3 ` means we downsample the video frames by 3 to reduce compute.
+    - `ds=3 ` means we downsample the video frames by 3 to reduce computation.
 
     - `seq_len=5` means 5 frames for each _step_ (concept used in DPC).
 
