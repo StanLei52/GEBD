@@ -86,7 +86,7 @@ Refer to our [paper](https://arxiv.org/abs/2101.10511) for more details.
 
 ## New Features
 
-- Distributed Balance Batch Sampler, see `utils/sampler.py`.
+- Distributed Balanced Batch Sampler, see `utils/sampler.py`.
 
   
 
@@ -99,7 +99,6 @@ Refer to our [paper](https://arxiv.org/abs/2101.10511) for more details.
 ## Acknowledgement 
 
 - [pytorch-image-models](https://github.com/rwightman/pytorch-image-models) by [Ross Wightman](https://github.com/rwightman).
-- Thank [Mike Shou](http://www.columbia.edu/~zs2262/) for his insights.
 
 
 
