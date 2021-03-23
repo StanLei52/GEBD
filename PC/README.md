@@ -20,7 +20,7 @@ Refer to our [paper](https://arxiv.org/abs/2101.10511) for more details.
   CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.launch --nproc_per_node=2 PC_train.py \
   --dataset kinetics_multiframes \
   --train-split train \
-  --val-split valnew \
+  --val-split val \
   --num-classes 2 \
   --batch-size 32 \
   --n-sample-classes 2 \
