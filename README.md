@@ -2,7 +2,7 @@
 
 We release our data annotation & baseline codes for detecting generic event boundaries in video.
 
-Links: [[Arxiv](https://arxiv.org/abs/2101.10511)]  [[LOVEU Challenge](https://sites.google.com/view/loveucvpr21/challenge)]
+Links: [[Arxiv](https://arxiv.org/abs/2101.10511)]  [[LOVEU Challenge](https://sites.google.com/view/loveucvpr21/home)]
 
 Contributors: Mike Zheng Shou, Stan Lei, Deepti Ghadiyaram, Weiyao Wang, Matt Feiszli.
 
@@ -94,7 +94,7 @@ This repo has the following structure:
         |   augmentation.py
         |   utils.py
 ```
-Note that we release codes on Github. Annotations are available on [GoogleDrive](linkhere). Run the code by yourself to generate the output files.
+Note that we release codes on Github. Annotations are available on [GoogleDrive](https://drive.google.com/drive/folders/1AlPr63Q9D-HAGc5bOUNTzjCiWOC1a3xo?usp=sharing). Run the code by yourself to generate the output files.
 
 
 * `data/`:
@@ -173,11 +173,11 @@ Our implementation is based on the [[DPC](https://github.com/TengdaHan/DPC)] fra
 
   - Notes:
 
-    - `ds=3 ` means we downsample the video frames by 3 to reduce compute.
+    - `ds=3 ` means we downsample the video frames by 3 to reduce computation.
 
-    - `seq_len=5` means 5 frames for each $step$ (concept used in DPC).
+    - `seq_len=5` means 5 frames for each _step_ (concept used in DPC).
 
-    - `num_seq=2`and ` pred_step=1` so that at a certain time position $t$, we use 1 step before and 1 step after to assess the predictability at time $t$; thus the predictability at time $t$ is the feature difference between the average feature of 5 sampled frames before$t$and the average feature of 5 sampled frames after $t$.
+    - `num_seq=2`and ` pred_step=1` so that at a certain time position _t_, we use 1 step before and 1 step after to assess the predictability at time _t_; thus the predictability at time _t_ is the feature difference between the average feature of 5 sampled frames before _t_ and the average feature of 5 sampled frames after _t_.
 
     - we slide such model over time to obtain predictability at different temporal positions. More details can be found in `dataset_3d_infer_pred_error.py`. Note that `window_lists.pkl` stores the index of frames to be sampled for every window - since it takes a long time to compute (should be able to optimize in the future), we store its value and just load this pre-computed value in the future runs on the same dataset during experimental explorations.
 
