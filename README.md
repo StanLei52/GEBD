@@ -14,98 +14,104 @@ This repo has the following structure:
 
 ```
 ./
-|   LICENSE
-|   README.md
-|   
-+---BdyDet
-|   +---k400
-|   |   |   detect_event_boundary.py
-|   |   |   run_multiprocess_detect_event_boundary.py
-|   |      
-|   \---TAPOS
-|       |   detect_event_boundary.py
-|       |   run_multiprocess_detect_event_boundary.py
-|
-+---data
-|   +---export
-|   |   |   hmdb_mr345_min_change_duration0.3.pkl
-|   |   |   hmdb_raw_annotation.pkl
-|   |   |   k400_mr345_train_min_change_duration0.3.pkl
-|   |   |   k400_mr345_valnew_min_change_duration0.3.pkl
-|   |   |   k400_mr345_val_min_change_duration0.3.pkl
-|   |   |   k400_train_raw_annotation.pkl
-|   |   |   k400_valnew_raw_annotation.pkl
-|   |   |   k400_val_raw_annotation.pkl
-|   |   |   prepare_hmdb_release.ipynb
-|   |   |   prepare_k400_release.ipynb
-|   |   |   tapos_annotation_timestamps_myfps.json
-|   |           
-|   +---exp_k400
-|   |   |   classInd.txt
-|   |   |   detect_seg.eval.mindur0.3.npy
-|   |   |   val_set.csv
-|   |   |   window_lists.pkl
-|   |   | 
-|   |   +---pred_err
-|   |   |   ...
-|   |   |   
-|   |   \---detect_seg
-|   |           --07WQ2iBlw.pkl
-|   |           ...
-|   |           __wsytoYy3Q.pkl
-|   |           
-|   \---exp_TAPOS
-|       |   detect_seg.eval.rgb.npy
-|       |   train_set.csv
-|       |   val_set.csv
-|       |   window_lists.rgb.pkl
-|       | 
-|       +---pred_err
-|       |   ...
-|       |    
-|       \---detect_seg
-|               01d8r4klM5w_s00001_10_807_41_426.pkl
-|               ...
-|               CidU2e7AOOw_s00001_5_700_21_300.pkl
-|               
-+---eval
-|   |   eval_GEBD_k400.ipynb
-|   |   eval_GEBD_TAPOS.ipynb
-|           
-\---PA_DPC
-    |   LICENSE
-    |   README.md
-    |   
-    +---asset
-    |       arch.png
-    |       
-    +---backbone
-    |   |   convrnn.py
-    |   |   resnet_2d.py
-    |   |   resnet_2d3d.py
-    |   |   select_backbone.py
-    |           
-    +---dpc
-    |   |   dataset_3d_infer_pred_error.py
-    |   |   main_infer_pred_error.py
-    |   |   model_3d.py
-    |           
-    \---utils
-        |   augmentation.py
-        |   utils.py
+│   LICENSE
+│   README.md
+│
+├───BdyDet
+│   ├───k400
+│   │       detect_event_boundary.py
+│   │       run_multiprocess_detect_event_boundary.py
+│   │
+│   └───TAPOS
+│           detect_event_boundary.py
+│           run_multiprocess_detect_event_boundary.py
+│
+├───Challenge_eval_Code
+│       eval.py
+│       README.md
+│
+├───data
+│   ├───export
+│   │       prepare_hmdb_release.ipynb
+│   │       prepare_k400_release.ipynb
+│   │
+│   ├───exp_k400
+│   │   │   classInd.txt
+│   │   │   val_set.csv
+│   │   │
+│   │   ├───detect_seg
+│   │   └───pred_err
+│   └───exp_TAPOS
+│       │   train_set.csv
+│       │   val_set.csv
+│       │
+│       ├───detect_seg
+│       └───pred_err
+├───eval
+│       eval_GEBD_k400.ipynb
+│       eval_GEBD_TAPOS.ipynb
+│
+├───PA_DPC
+│   │   LICENSE
+│   │   README.md
+│   │
+│   ├───asset
+│   │       arch.png
+│   │
+│   ├───backbone
+│   │       convrnn.py
+│   │       resnet_2d.py
+│   │       resnet_2d3d.py
+│   │       select_backbone.py
+│   │
+│   ├───dpc
+│   │       dataset_3d_infer_pred_error.py
+│   │       main_infer_pred_error.py
+│   │       model_3d.py
+│   │
+│   └───utils
+│           augmentation.py
+│           utils.py
+│
+└───PC
+    │   PC_test.py
+    │   PC_train.py
+    │   README.md
+    │
+    ├───DataAssets
+    ├───datasets
+    │       augmentation.py
+    │       MultiFDataset.py
+    │
+    ├───modeling
+    │       resnetGEBD.py
+    │
+    ├───run
+    │       pc_k400_dist.sh
+    │       pc_tapos_dist.sh
+    │
+    └───utils
+            augmentation.py
+            checkpoint_saver.py
 ```
+
 Note that we release codes on Github. Annotations are available on [GoogleDrive](https://drive.google.com/drive/folders/1AlPr63Q9D-HAGc5bOUNTzjCiWOC1a3xo?usp=sharing). Run the code by yourself to generate the output files.
 
 
 * `data/`:
-  - `export/` folder stores temporal boundary annotations of our Kinetics-GEBD and HMDB-GEBD datasets; 
-  - `exp_k400/` and `exp_TAPOS` store intermediate experimental data and final results.
+
+  - `export/` folder stores temporal boundary annotations of our Kinetics-GEBD and HMDB-GEBD datasets; download our raw annotations and put them under this folder.
+  - `exp_k400/` and `exp_TAPOS/` store intermediate experimental data and final results.
+
+* `Challenge_eval_Code/`: codes for evaluation in LOVEU Challenge Track 1.
 
 * `BdyDet/`: codes for detecting boundary positions based on predictability sequence.
 
 * `eval/`: codes for evaluating the performance of boundary detection.
 
-* `PA_DPC`: codes for computing the predictability sequence using various methods.
+* `PA_DPC/`: codes for computing the predictability sequence using various methods.
+
+* `PC/`: codes for supervised baseline on GEBD.
 
   
 
@@ -113,7 +119,7 @@ Note that we release codes on Github. Annotations are available on [GoogleDrive]
 ### `data/`
 
 * In `data/export/`: 
-  - `*_raw_annotation.pkl` stores the raw annotations; 
+  - `*_raw_annotation.pkl` stores the raw annotations; download raw annotations [here](https://drive.google.com/drive/folders/1AlPr63Q9D-HAGc5bOUNTzjCiWOC1a3xo?usp=sharing).
   - we further filter out videos that receives <3 annotations and conduct pre-processing e.g. merge very close boundaries - we use notebook `prepare_*_release.ipynb` and the output is stored in `*_mr345_min_change_duration0.3.pkl`. 
 
 * Some fields in `*_raw_annotation.pkl`:
@@ -131,7 +137,27 @@ Note that we release codes on Github. Annotations are available on [GoogleDrive]
 
 * In `data/exp_k400/` and `data/exp_TAPOS/`: 
   - `pred_err/` stores output of `PA_DPC/` i.e. the predictability sequence;
-  -  `detect_seg/` stores output of `BdyDet/` i.e. detected boundary positions.
+  - `detect_seg/` stores output of `BdyDet/` i.e. detected boundary positions.
+
+
+
+### `Challenge_eval_Code/`
+
+- We use `eval.py` for evaluation in our competition.
+
+- Although one can use frame_index and number of total frames to measure the *Rel.Dis*, as we implemented in `eval/`, you should **represent the detected boundaries with timestamps (in seconds)**. For example:
+
+  ```shell
+  {
+  ‘6Tz5xfnFl4c’: [5.9, 9.4], # boundaries detected at 5.9s, 9.4s of this video
+  ‘zJki61RMxcg’: [0.6, 1.5, 2.7] # boundaries detected at 0.6s, 1.5s, 2.7s of this video
+  ...
+  }
+  ```
+
+- Refer to [this file](https://github.com/StanLei52/GEBD/blob/main/data/export/prepare_k400_release.ipynb) to generate GT files from raw annotations.
+
+
 
 
 ### `BdyDet/`
@@ -151,6 +177,7 @@ python run_multiprocess_detect_event_boundary.py
 Our implementation is based on the [[DPC](https://github.com/TengdaHan/DPC)] framework. Please refer to their README or website to learn installation and usage. In the below, we only explain how to run our scripts and what are our modifications.
 
 * Modifications at a glance
+
   - `main_infer_pred_error.py` runs in only inference mode to assess predictability over time.
   - `dataset_3d_infer_pred_error.py` contains loaders for two datasets i.e. videos from Kinetics and truncated instances from TAPOS.
   - `model_3d.py` adds several classes for feature extraction purposes, e.g. ResNet feature before the pooling layer, to enable computing feature difference directly based on ImageNet pretrained model, in contrast to the predictive model in DPC.
@@ -181,8 +208,97 @@ Our implementation is based on the [[DPC](https://github.com/TengdaHan/DPC)] fra
 
     - we slide such model over time to obtain predictability at different temporal positions. More details can be found in `dataset_3d_infer_pred_error.py`. Note that `window_lists.pkl` stores the index of frames to be sampled for every window - since it takes a long time to compute (should be able to optimize in the future), we store its value and just load this pre-computed value in the future runs on the same dataset during experimental explorations.
 
-      
+
+
+### `PC/`
+
+PC is a supervised baseline for GEBD task. In the PC framework, for each frame _f_ in a video, we take _T_ frames preceding _f_ and _T_ frames succeeding _f_ as inputs, and then build a binary classifier  to predict if _f_ is boundary or background.
+
+- Get Started
+
+  - Check `PC/datasets/MultiFDataset.py` to generate GT files for training. Note that you should prepare `k400_mr345_*SPLIT*_min_change_duration0.3.pkl` for Kinetics-GEBD and `TAPOS_*SPLIT*_anno.pkl`  (this should be organized as `k400_mr345_*SPLIT*_min_change_duration0.3.pkl` for convenience) for TAPOS before running our code.
+  - You should accordingly change `PATH_TO` in our codes to your data/frames path as needed.
+
+- How to run?
+
+  Change directory to `./PC`.
+
+  - Train on Kinetics-GEBD:
+
+    ```shell
+    CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.launch --nproc_per_node=2 PC_train.py \
+    --dataset kinetics_multiframes \
+    --train-split train \
+    --val-split val \
+    --num-classes 2 \
+    --batch-size 32 \
+    --n-sample-classes 2 \
+    --n-samples 16 \
+    --lr 0.01 \
+    --warmup-epochs 0 \
+    --epochs 30 \
+    --decay-epochs 10 \
+    --model multiframes_resnet \
+    --pin-memory \
+    --balance-batch \
+    --sync-bn \
+    --amp \
+    --native-amp \
+    --eval-metric loss \
+    --log-interval 50
+    ```
+
+  - Train on TAPOS:
+
+    ```shell
+    CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.launch --nproc_per_node=2 PC_train.py \
+    --dataset tapos_multiframes \
+    --train-split train \
+    --val-split val \
+    --num-classes 2 \
+    --batch-size 32 \
+    --n-sample-classes 2 \
+    --n-samples 16 \
+    --lr 0.01 \
+    --warmup-epochs 0 \
+    --epochs 30 \
+    --decay-epochs 10 \
+    --model multiframes_resnet \
+    --pin-memory \
+    --balance-batch \
+    --sync-bn \
+    --amp \
+    --native-amp \
+    --eval-metric loss \
+    --log-interval 50 
+    ```
+
+  - Generate scores sequence on Kinetics-GEBD Validation Set:
+
+    ```shell
+    CUDA_VISIBLE_DEVICES=0 python PC_test.py \ 
+    --dataset kinetics_multiframes \
+    --val-split val \
+    --resume path_to/checkpoint
+    ```
+
+  - Generate scores sequence on TAPOS:
+
+    ```shell
+    CUDA_VISIBLE_DEVICES=0 python PC_test.py \ 
+    --dataset tapos_multiframes \
+    --val-split val \
+    --resume path_to/checkpoint
+    ```
+
+- Models
+
+  Models will be released soon.
+
+
+
 ### Misc
+
 * Download datasets from [Kinetics-400](https://deepmind.com/research/open-source/kinetics) and [TAPOS](https://sdolivia.github.io/TAPOS/). (Note that some of the videos can not be downloaded from YouTube for some reason, you can go ahead with those available.)
 
 * Note that for TAPOS, you need to cut out each action instance by yourself first and then can use our following codes to process each instance's video separately.
@@ -197,6 +313,3 @@ Our implementation is based on the [[DPC](https://github.com/TengdaHan/DPC)] fra
 ### Q&A
 
 For any questions, welcome to create an issue or email Mike (mike.zheng.shou@gmail.com) and Stan (leiwx52@gmail.com). Thank you for helping us improve our data & codes.
-
-
-
