@@ -2,7 +2,7 @@
 
 Here, we release codes for PC -- an end-to-end training method for GEBD. 
 
-In the PC framework, for each frame _f_ in a video, we take _T_ frames preceeding _f_ and _T_ frames suceeding _f_ as inputs, and then build a binary classifier  to predict if _f_ is boundary or background.
+In the PC framework, for each frame _f_ in a video, we take _T_ frames preceding _f_ and _T_ frames succeeding _f_ as inputs, and then build a binary classifier  to predict if _f_ is boundary or background.
 
 Refer to our [paper](https://arxiv.org/abs/2101.10511) for more details.
 
