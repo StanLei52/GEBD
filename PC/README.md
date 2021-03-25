@@ -92,7 +92,7 @@ Refer to our [paper](https://arxiv.org/abs/2101.10511) for more details.
 
 ## Models
 
-- Will be released soon.
+- [k400](https://drive.google.com/file/d/1jtFag6EmkPpdlsvgusTjRpRW3xWTDBuI/view?usp=sharing).
 
   
 
