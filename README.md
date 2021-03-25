@@ -293,7 +293,7 @@ PC is a supervised baseline for GEBD task. In the PC framework, for each frame _
 
 - Models
 
-  Models will be released soon.
+  - [k400](https://drive.google.com/file/d/1jtFag6EmkPpdlsvgusTjRpRW3xWTDBuI/view?usp=sharing)
 
 
 
