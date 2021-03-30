@@ -104,10 +104,10 @@ def getDataset(dataset_name, mode, args):
     if dataset_name.lower() == 'multif_dummy':
         dataset = MultiFDummyDataSet(mode=mode)
     elif dataset_name.lower()=='kinetics_multiframes':
-        dataroot = '/Checkpoint/leiwx/weixian/data/Kinetics_GEBD_frame' # FIXME
+        dataroot = '/PATH_TO/Kinetics_GEBD_frame' # FIXME
         dataset = KineticsGEBDMulFrames(mode=mode,dataroot=dataroot,frames_per_side=5,transform=transform_series,args=args)
     elif dataset_name.lower()=='tapos_multiframes':
-        dataroot = '/Checkpoint/leiwx/weixian/TAPOS/instances_frame256'
+        dataroot = '/PATH_TO/TAPOS_instances_frame256'
         dataset = TaposGEBDMulFrames(mode=mode, dataroot=dataroot, frames_per_side=5, tmpl='image_{:05d}.jpg',transform = transform_series, args=args)
     else:
         raise NotImplementedError
@@ -154,7 +154,7 @@ def getDataLoader(dataset, is_training=True, args=None):
         loader = loader_class(dataset, **loader_args)
     return loader
 
-def getModel(model_name='pairwiseViT',args=None):
+def getModel(model_name='multiframes_resnet',args=None):
     if model_name.lower() == 'multiframes_resnet': #resnet-multi_frames
         model = resnetGEBD(backbone='resnet50',pretrained=True,num_classes=args.num_classes,frames_per_side=5)
     # elif con:
