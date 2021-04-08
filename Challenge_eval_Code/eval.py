@@ -22,6 +22,7 @@ for vid_id in list(gt_dict.keys()):
         continue
 
     if vid_id not in pred_dict.keys():
+        num_pos_all += len(gt_dict[vid_id]['substages_timestamps'][0])
         continue
 
     # detected timestamps
