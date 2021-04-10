@@ -93,6 +93,18 @@ This repo has the following structure:
     └───utils
             augmentation.py
             checkpoint_saver.py
+            augmentation.py
+            checkpoint_saver.py
+            clip_grad.py
+            cuda.py
+            getter.py
+            helper.py
+            log.py
+            metric.py
+            model_ema.py
+            optim_factory.py
+            sampler.py
+            scheduler.py
 ```
 
 Note that we release codes on Github. Annotations are available on [GoogleDrive](https://drive.google.com/drive/folders/1AlPr63Q9D-HAGc5bOUNTzjCiWOC1a3xo?usp=sharing). Run the code by yourself to generate the output files.
