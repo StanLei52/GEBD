@@ -16,6 +16,7 @@ This repo has the following structure:
 ./
 │   LICENSE
 │   README.md
+|   INSTRUCTIONS.md
 │
 ├───BdyDet
 │   ├───k400
@@ -107,7 +108,7 @@ This repo has the following structure:
             scheduler.py
 ```
 
-Note that we release codes on Github. Annotations are available on [GoogleDrive](https://drive.google.com/drive/folders/1AlPr63Q9D-HAGc5bOUNTzjCiWOC1a3xo?usp=sharing). Run the code by yourself to generate the output files.
+Note that we release codes on Github. Annotations are available on [GoogleDrive](https://drive.google.com/drive/folders/1AlPr63Q9D-HAGc5bOUNTzjCiWOC1a3xo?usp=sharing). Run the code by yourself to generate the output files. **Refer to [INSTRUCTIONS](INSTRUCTION.md) for preparing data and generating submission files.**
 
 
 * `data/`:
