@@ -27,7 +27,7 @@ In this part, you can customize your own training procedure. We take our `PC` ba
 
 **2-a**. Check `PC/datasets/MultiFDataset.py` to generate files for training.
 
-**2-b**. Accordingly change `PATH_TO` in our codes to your data/frames path as needed. Note that your data should be prepared as stated in **step 1**.
+**2-b**. Accordingly change `PATH_TO` in our codes to your data/frames path as needed. Note that your data should be prepared as stated in **step-1**.
 
 **2-c**. Train on Kinetics-GEBD:
 
