@@ -16,7 +16,7 @@ This repo has the following structure:
 ./
 │   LICENSE
 │   README.md
-|   INSTRUCTIONS.md
+│   INSTRUCTIONS.md
 │
 ├───BdyDet
 │   ├───k400
