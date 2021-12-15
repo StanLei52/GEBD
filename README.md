@@ -322,7 +322,17 @@ PC is a supervised baseline for GEBD task. In the PC framework, for each frame _
 
 * To reproduce PA_DPC, generate your own `data/exp_*/val_set.csv`, in which path to the folder of video frames and the number of frames in that specific video should be contained. 
 
-
+### Cite our work
+```
+@InProceedings{Shou_2021_ICCV,
+    author    = {Shou, Mike Zheng and Lei, Stan Weixian and Wang, Weiyao and Ghadiyaram, Deepti and Feiszli, Matt},
+    title     = {Generic Event Boundary Detection: A Benchmark for Event Segmentation},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2021},
+    pages     = {8075-8084}
+}
+```
 
 
 ### Q&A
