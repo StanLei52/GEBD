@@ -324,7 +324,7 @@ PC is a supervised baseline for GEBD task. In the PC framework, for each frame _
 
 ### Cite our work
 ```
-@InProceedings{Shou_2021_ICCV,
+@InProceedings{Shou_GEBD_2021_ICCV,
     author    = {Shou, Mike Zheng and Lei, Stan Weixian and Wang, Weiyao and Ghadiyaram, Deepti and Feiszli, Matt},
     title     = {Generic Event Boundary Detection: A Benchmark for Event Segmentation},
     booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
